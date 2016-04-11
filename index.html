@@ -1,170 +1,131 @@
-<html>
-
-<head>
+<DOCTYPE html>
     
-    <style>
-#video_player { 
-  display: table; line-height: 0;
-  font-size: 0; background: #000;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-#video_container { 
-  position: relative;
-}
-#video_player div, #video_player figcaption { 
-  display: table-cell;
-  vertical-align: top; 
-}
-#video_container video { 
-  position: absolute; 
-  display: block;
-  width: 100%;
-  height: 100%;
-  top: 0;
-}
-#video_player figcaption { width: 15%; }
-#video_player figcaption a { display: block; }
-#video_player figcaption a { 
-  opacity: .5;
-  transition: 1s opacity; 
-}
-#video_player figcaption a img, figure video { 
-  width: 100%; height: auto; 
-}
-#video_player figcaption a.currentvid, #video_player figcaption a:hover, #video_player figcaption a:focus { opacity: 1; }
-@media (max-width: 700px) {
-  #video_player video, #video_player figcaption { 
-    display: table-row; 
-  }
-#video_container { padding-top: 56.25%; }
-#video_player figcaption a { 
-  display: inline-block; width: 33.33%; 
-}
-}
+    <html lang="pt">
+        
+        <head> 
+            <title> hgrssss </title>
+            <meta charset="utf-8">
+            <meta name="description" content="Studio de web design">
+            <meta name="keywords" content="HTML,CSS,JavaScript, web design, sites">
+            <meta name="author" content="STUDIO">
+            <link rel="stylesheet" type="text/css" href="style.css" >
+            <link rel="stylesheet" type="text/css" href="normalize.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+            <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        </head>
+        
+        <body>
+            
+            <header>
+                <nav>
+                    
+                    <div id="navigator">
+                        
+                        <ul id="nav">
+                            
+                            <li class="nav_tab">
+                                <a href="#home"><p>Home</p></a>
+                            </li>
+                            
+                            <li class="nav_tab">
+                                <a href="#about"><p>About</p></a>
+                            </li>
+                            
+                            <li class="nav_tab">
+                                <a href="#portfolio"><p>Portfolio</p></a>
+                            </li>	
 
-    </style>
-    
-    <script>
-    
-        var video_player = document.getElementById("video_player");
-video = video_player.getElementsByTagName("video")[0],
-video_links = video_player.getElementsByTagName("figcaption")[0],
-source = video.getElementsByTagName("source"),
-link_list = [],
-vidDir = "http://demosthenes.info/assets/videos/",
-currentVid = 0,
-allLnks = video_links.children,
-lnkNum = allLnks.length;
-video.removeAttribute("controls");
-video.removeAttribute("poster");
+                            <li class="nav_tab">
+                                <a href="#contato"><p>Contact</p></a>
+                            </li>
+                            
+                        </ul>
+		          </div>
+		
+                    <div class="menu-icon">		
+                        
+                        <div class="line_one"></div>
+                        <div class="line_two"></div>
+                        <div class="line_three"></div>  	
+                        
+                    </div>
+                </nav>
 
-(function() {
-function playVid(index) {
- video_links.children[index].classList.add("currentvid");
-    source[1].src = vidDir + link_list[index] + ".webm";  
-	source[0].src = vidDir + link_list[index] + ".mp4";
-    currentVid = index;
-    video.load();
-	video.play();
-}
+            </header>
+            
+            <section id="home">
+                 
+                <h1> Hello. </h1>
+                
 
-for (var i=0; i<lnkNum; i++) {
-var filename = allLnks[i].href;
-link_list[i] = filename.match(/([^\/]+)(?=\.\w+$)/)[0];
-(function(index){
-        allLnks[i].onclick = function(i){
-        i.preventDefault();  
-		for (var i=0; i<lnkNum; i++) {
-		allLnks[i].classList.remove("currentvid");
-		}
-		playVid(index);
-        }    
-    })(i);
-}
-video.addEventListener('ended', function () {
-    allLnks[currentVid].classList.remove("currentvid");
-    if ((currentVid + 1) >= lnkNum) { nextVid = 0 } else { nextVid = currentVid+1 }
-    playVid(nextVid);
-})
+            </section>
+            
+             <section id="about">
+                 <div class="left">
+                 
+                 <h1> About me</h1>
+                 <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut sem sit amet est fermentum fringilla eget vitae leo. Integer sed dolor eget nulla dapibus lobortis non at velit. Curabitur a efficitur metus. Pellentesque erat velit, fermentum nec sapien ac, molestie aliquam metus.</h2>
+                 
+                     </div>
+                 <div class="right">
+                 
+                 <h1> hue</h1>
+                 </div>
+                    
+            </section>
+            
+            
+            
+            <section id="portfolio">
+                
+              
+                
+                
+              
+                    <div class="t1">
+                        <div class="cap">
+                            <h2 class="site">Higor</h2>
+                            <a href="">
+                                    <h2 class="launch">LAUNCH</h2>
+                                </a>
+                        </div>
 
-video.addEventListener('mouseenter', function() {
-    video.setAttribute("controls","true");
-})
+                    </div>
+               
+                
+              
+                    <div class="t2">
+                        <div class="cap">
+                            <h2 class="site">Matheus</h2>
+                                <a href="">
+                                    <h2 class="launch">LAUNCH</h2>
+                                </a>
+                        </div>
 
-video.addEventListener('mouseleave', function() {
-    video.removeAttribute("controls");
-})
+                    </div>
+              
+                
+                
+                    <div class="t3">
+                        <div class="cap">
+                            <h2 class="site">Ferreira</h2>
+                            <a href="">
+                                    <h2 class="launch">LAUNCH</h2>
+                                </a>
+                        </div>
 
-var indexOf = function(needle) {
-    if(typeof Array.prototype.indexOf === 'function') {
-        indexOf = Array.prototype.indexOf;
-    } else {
-        indexOf = function(needle) {
-            var i = -1, index = -1;
-			for(i = 0; i < this.length; i++) {
-                if(this[i] === needle) {
-                    index = i;
-                    break;
-                }}
-            return index;
-        };}
-    return indexOf.call(this, needle);
-};
- 	var focusedLink = document.activeElement;
- 	index = indexOf.call(allLnks, focusedLink);
- 	
-document.addEventListener('keydown', function(e) {
-if (index) {
-	var focusedElement = document.activeElement;
-    if (e.keyCode == 40 || e.keyCode == 39) { // down or right cursor
-    var nextNode = focusedElement.nextElementSibling;
-    if (nextNode) { nextNode.focus(); } else { video_links.firstElementChild.focus(); }
-    }
-   if (e.keyCode == 38 || e.keyCode == 37) { // up or left cursor
-    var previousNode = focusedElement.previousElementSibling;
-    if (previousNode) { previousNode.focus(); } else { video_links.lastElementChild.focus(); }
-    }
- }
-});
+                    </div>
+               
+                
+            
 
-})();  
-
-    
-    </script>
-    
-</head>
-
-<body>
-    
-    <figure id="video_player">
-  <div id="video_container">
-  <video controls poster="mm/2016-04-09.png">
-    <source src="mm/01%20-%20Abertura.mp4" type="video/mp4">
-</video>
-</div>
-<figcaption>
-  <a href="mm/2.%20Internet%20das%20Coisas.mp4" class="currentvid">
-    <img src="mm/2016-04-09.png">
-  </a>
-  <a href="mm/3.%20Idea%C3%A7ao.mp4">
-    <img src="mm/2016-04-09.png">
-  </a>
-  <a href="mm/4.%20Prototipa%C3%A7%C3%A3o.mp4">
-    <img src="mm/2016-04-09.png">
-  </a>
-  <a href="mm/5.%20Viabilidade.mp4">
-    <img src="mm/2016-04-09.png">
-  </a>
-  <a href="mm/6.%20Pitch.mp4">
-    <img src="mm/2016-04-09.png">
-  </a>
-  <a href="mm/7.%20Fechamento.mp4">
-    <img src="mm/2016-04-09.png">
-  </a>
- 
-</figcaption>
-</figure>
-</body>
-
-</html>
+                
+            </section>
+            
+            <section id="contato">
+                    
+            </section>
+        <script src="scroll.js"></script>
+        </body>
+    </html>
